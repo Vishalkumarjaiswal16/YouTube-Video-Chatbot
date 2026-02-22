@@ -6,6 +6,45 @@ An interactive Retrieval-Augmented Generation (RAG) chatbot that lets you chat w
 
 ---
 
+## 📌 Overview
+
+> **YouTube Video Chatbot** transforms any YouTube video into an interactive knowledge base you can query in plain language.
+
+Traditional video consumption is passive — you watch, you scrub, you re-watch. This project flips that model. By combining **Retrieval-Augmented Generation (RAG)** with **LangChain** and **OpenAI's GPT models**, it lets you have a real conversation with the content of any YouTube video.
+
+### 🎯 What Problem Does It Solve?
+
+Ever watched a 2-hour lecture and wanted to instantly find the answer to one specific question? Or needed to extract key insights from a video without watching it entirely? This chatbot does exactly that — it reads the video so you don’t have to.
+
+### ⚡ How Is It Built?
+
+The app follows a clean **5-step RAG pipeline**:
+
+```
+YouTube URL
+    ↓
+Transcript Extraction  (youtube-transcript-api)
+    ↓
+Text Chunking          (RecursiveCharacterTextSplitter | 1000 chars, 200 overlap)
+    ↓
+Vector Embedding       (OpenAI text-embedding-3-small → FAISS index)
+    ↓
+Retrieval + Generation (Top-5 chunks → GPT model → Grounded Answer)
+```
+
+### 📊 Project Stats
+
+| Property | Detail |
+|---|---|
+| 🔧 Framework | LangChain (LCEL) + Streamlit |
+| 🧠 LLM | OpenAI GPT (`gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, `gpt-4.1-mini`) |
+| 💾 Vector Store | FAISS (in-memory) |
+| 🌐 Language Support | Multi-language with auto English translation |
+| 📄 License | Apache-2.0 |
+| 👨‍💻 Author | Vishal Kumar Jaiswal |
+
+---
+
 ## ✨ Features
 
 ### 📌 Core Capabilities
