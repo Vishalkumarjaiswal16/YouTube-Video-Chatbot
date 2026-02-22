@@ -119,10 +119,13 @@ RAG/Youtube_chatbot/
 ---
 
 
-Made with ❤️ by [Vishal Kumar Jaiswal](https://github.com/Vishalkumarjaiswal16)
 
 ## ✅ Future Improvements (Ideas)
 
 - Support for multiple videos in one session (multi-document RAG).
 - Caching of transcripts and vector stores to speed up repeated queries.
 - Export chat history and sources as markdown or PDF.
+
+---
+
+Made with ❤️ by [Vishal Kumar Jaiswal](https://github.com/Vishalkumarjaiswal16)
