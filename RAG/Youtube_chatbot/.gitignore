@@ -1,0 +1,57 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Python bytecode and __pycache__
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+venv/
+env/
+ENV/
+.venv/
+.env/
+.env
+
+# Distribution/build artifacts
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Streamlit, local config
+.streamlit/
+*.toml
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-*
+
+# Jupyter files (if any)
+.ipynb_checkpoints
+
+# Test/coverage reports
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
