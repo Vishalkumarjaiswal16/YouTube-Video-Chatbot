@@ -1,5 +1,6 @@
 # YouTube-Video-Chatbot
-🎬 YouTube Video Chatbot — RAG with LangChain
+
+🎥 YouTube Video Chatbot — RAG with LangChain
 
 An interactive Retrieval-Augmented Generation (RAG) chatbot that lets you chat with any YouTube video's content. Paste a YouTube link, and the app fetches the transcript, builds a searchable knowledge base, and answers your questions using OpenAI's GPT models — all through a clean Streamlit UI.
 
@@ -7,34 +8,51 @@ An interactive Retrieval-Augmented Generation (RAG) chatbot that lets you chat w
 
 ## ✨ Features
 
-- **YouTube Transcript Extraction** – Automatically fetches video transcripts using the `youtube-transcript-api`, with multi-language support (falls back to any available language if English is not available).[page:1]  
-- **RAG Pipeline** – Splits transcripts into chunks, generates embeddings with OpenAI’s `text-embedding-3-small`, stores them in a FAISS vector store, and retrieves the most relevant context for each question.[page:1]  
-- **Multi-Language Support** – Non-English transcripts are automatically translated to English before being used as context, while the chatbot responds in the language of your question.[page:1]  
-- **Conversational Chat Interface** – Full chat history is maintained within the Streamlit session so you can ask follow-up questions naturally.[page:1]  
-- **Configurable Model & Temperature** – Choose between GPT models (`gpt-4o-mini`, `gpt-4o`, `gpt-4.1-mini`, `gpt-4.1`, `gpt-5.1`) and adjust creativity via a temperature slider.[page:1]  
-- **Secure API Key Handling** – Loads the OpenAI API key from a `.env` file or lets you enter it manually in the sidebar.[page:1]
+### 📌 Core Capabilities
+
+| Feature | Description |
+|---|---|
+| 🎥 **YouTube Transcript Extraction** | Automatically fetches video transcripts using `youtube-transcript-api`. Falls back to any available language if English is not found. |
+| 🧠 **RAG Pipeline** | Splits transcripts into 1000-char chunks (200-char overlap), embeds with `text-embedding-3-small`, stores in FAISS, and retrieves the top 5 most relevant chunks per query. |
+| 🌐 **Multi-Language Support** | Non-English transcripts are auto-translated to English before context retrieval. The chatbot responds in the same language as your question. |
+| 💬 **Conversational Chat Interface** | Maintains full chat history within the Streamlit session, enabling natural multi-turn follow-up questions. |
+| ⚙️ **Configurable Model & Temperature** | Choose from `gpt-4o-mini`, `gpt-4o`, `gpt-4.1-mini`, `gpt-4.1` via a sidebar dropdown. Tune response creativity with a temperature slider (0.0 – 1.0). |
+| 🔐 **Secure API Key Handling** | Loads `OPENAI_API_KEY` from a `.env` file at startup; falls back to a manual sidebar input field so you never hard-code credentials. |
+
+### 🚀 RAG Architecture Highlights
+
+- **Chunking Strategy** — `RecursiveCharacterTextSplitter` with `chunk_size=1000` and `chunk_overlap=200` ensures no context boundary is lost between adjacent chunks.
+- **Embedding Model** — Uses OpenAI's `text-embedding-3-small` for fast and cost-efficient dense vector representations.
+- **Vector Store** — FAISS (Facebook AI Similarity Search) enables millisecond-level similarity search over large transcripts.
+- **Retrieval** — Top-K similarity search (`k=5`) fetches the most semantically relevant transcript chunks before passing to the LLM.
+- **LangChain LCEL** — The full pipeline is built with LangChain Expression Language (LCEL) runnables for clean, composable chain design.
+
+### 🎨 User Experience
+
+- Clean, minimal **Streamlit sidebar** for all configuration (API key, model, temperature).
+- **Real-time streaming responses** feel natural and responsive.
+- **Persistent chat history** within a session — ask follow-ups without re-loading the video.
+- **Error handling** for unavailable transcripts, invalid URLs, and missing API keys with user-friendly messages.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Component          | Technology                     |
-|--------------------|--------------------------------|
-| Frontend / UI      | Streamlit                      |
-| LLM Framework      | LangChain (LCEL runnables)     |
-| Embeddings         | OpenAI `text-embedding-3-small`|
-| Vector Store       | FAISS                          |
-| Transcript Source  | `youtube-transcript-api`       |
-| LLM                | OpenAI GPT (configurable)      |[page:1]
-
----
+| Component | Technology |
+|---|---|
+| Frontend / UI | Streamlit |
+| LLM Framework | LangChain (LCEL runnables) |
+| Embeddings | OpenAI `text-embedding-3-small` |
+| Vector Store | FAISS |
+| Transcript Source | `youtube-transcript-api` |
+| LLM | OpenAI GPT (configurable) |
 
 ## 🚀 Quick Start
 
 ```bash
 # Clone the repo
-git clone https://github.com/<your-username>/youtube-video-chatbot.git
-cd youtube-video-chatbot
+git clone https://github.com/Vishalkumarjaiswal16/YouTube-Video-Chatbot.git
+cd YouTube-Video-Chatbot
 
 # Create and activate virtual environment (optional but recommended)
 python -m venv .venv
@@ -50,34 +68,31 @@ echo "OPENAI_API_KEY=sk-..." > .env
 streamlit run app.py
 ```
 
-Open the URL shown in the terminal (usually `http://localhost:8501`) in your browser.[page:1]
-
----
+Open the URL shown in the terminal (usually `http://localhost:8501`) in your browser.
 
 ## 📂 Project Structure
 
-```text
+```
 RAG/Youtube_chatbot/
-├── app.py               # Main Streamlit application with full RAG pipeline
-├── rag-langchain.ipynb  # Jupyter notebook for experimentation & prototyping
-└── requirements.txt     # Python dependencies
-```[page:1]
+├── app.py                  # Main Streamlit application with full RAG pipeline
+├── rag-langchain.ipynb     # Jupyter notebook for experimentation & prototyping
+└── requirements.txt        # Python dependencies
+```
 
 ---
 
 ## 🔍 How It Works
 
-1. **Paste a YouTube URL** – The app extracts the video ID and fetches the transcript.[page:1]  
-2. **Transcript Processing** – The transcript is split into 1000-character chunks with 200-character overlap using LangChain’s `RecursiveCharacterTextSplitter`.[page:1]  
-3. **Embedding & Indexing** – Chunks are embedded using `text-embedding-3-small` and stored in a FAISS vector store for fast similarity search.[page:1]  
-4. **Ask Questions** – Your question triggers a similarity search (top 5 chunks); the retrieved context is passed to the LLM along with your question to generate a grounded answer.[page:1]  
-5. **Translation Layer** – If the original transcript is non-English, retrieved chunks are translated to English before being passed to the QA prompt.[page:1]
+1. **Paste a YouTube URL** – The app extracts the video ID and fetches the transcript.
+2. **Transcript Processing** – The transcript is split into 1000-character chunks with 200-character overlap using LangChain's `RecursiveCharacterTextSplitter`.
+3. **Embedding & Indexing** – Chunks are embedded using `text-embedding-3-small` and stored in a FAISS vector store for fast similarity search.
+4. **Ask Questions** – Your question triggers a similarity search (top 5 chunks); the retrieved context is passed to the LLM along with your question to generate a grounded answer.
+5. **Translation Layer** – If the original transcript is non-English, retrieved chunks are translated to English before being passed to the QA prompt.
 
 ---
 
 ## ✅ Future Improvements (Ideas)
 
-- Support for multiple videos in one session (multi-document RAG).[page:1]  
-- Caching of transcripts and vector stores to speed up repeated queries.[page:1]  
-- Export chat history and sources as markdown or PDF.[page:1]
-```
+- Support for multiple videos in one session (multi-document RAG).
+- Caching of transcripts and vector stores to speed up repeated queries.
+- Export chat history and sources as markdown or PDF.
