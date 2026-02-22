@@ -118,6 +118,9 @@ RAG/Youtube_chatbot/
 
 ---
 
+
+Made with ❤️ by [Vishal Kumar Jaiswal](https://github.com/Vishalkumarjaiswal16)
+
 ## ✅ Future Improvements (Ideas)
 
 - Support for multiple videos in one session (multi-document RAG).
