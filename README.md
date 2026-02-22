@@ -32,18 +32,6 @@ Vector Embedding       (OpenAI text-embedding-3-small → FAISS index)
 Retrieval + Generation (Top-5 chunks → GPT model → Grounded Answer)
 ```
 
-### 📊 Project Stats
-
-| Property | Detail |
-|---|---|
-| 🔧 Framework | LangChain (LCEL) + Streamlit |
-| 🧠 LLM | OpenAI GPT (`gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, `gpt-4.1-mini`) |
-| 💾 Vector Store | FAISS (in-memory) |
-| 🌐 Language Support | Multi-language with auto English translation |
-| 📄 License | Apache-2.0 |
-| 👨‍💻 Author | Vishal Kumar Jaiswal |
-
----
 
 ## ✨ Features
 
