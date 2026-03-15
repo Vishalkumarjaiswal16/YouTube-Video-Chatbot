@@ -22,7 +22,7 @@ st.set_page_config(
 )
 
 st.title("🎬 YouTube Video Chatbot")
-st.caption("Paste a YouTube link, and chat with the video's content using RAG + LangChain")
+st.caption("Paste a YouTube link, and ask questions related to the video.")
 
 # ─── Sidebar: API Key ──────────────────────────────────────────────────────
 with st.sidebar:
