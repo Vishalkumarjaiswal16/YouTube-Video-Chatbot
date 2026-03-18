@@ -71,8 +71,6 @@ An AI-powered **RAG chatbot** built with LangChain, OpenAI, and Python. Transfor
 
 - ✅ Mastering the use of **OpenAI APIs** for NLP and embedding tasks
 - ✅ Implementing **Retrieval-Augmented Generation (RAG)** to enhance chatbot responses
-- ✅ Building a real-time chatbot for **video content understanding** using AI
-- ✅ Integrating a chatbot with a **dynamically generated knowledge base**
 - ✅ Understanding the architecture of **LangChain LCEL pipelines**
 - ✅ Working with **FAISS** vector stores for efficient similarity search
 
