@@ -49,8 +49,6 @@ An AI-powered **RAG chatbot** built with LangChain, OpenAI, and Python. Transfor
 
 > *High-level architecture overview of the YouTube Video Chatbot RAG pipeline — from transcript extraction and embedding creation to vector storage, retrieval, and LLM-powered response generation.*
 
-### 🔄 Architecture Flow
-
 ### Architecture Breakdown
 
 | Stage | Component | Description |
