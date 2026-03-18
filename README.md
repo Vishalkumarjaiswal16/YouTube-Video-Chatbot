@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/OpenAI-GPT%20Powered-412991?logo=openai" alt="OpenAI">
   <img src="https://img.shields.io/badge/LangChain-Integrated-green?logo=chainlink" alt="LangChain">
   <img src="https://img.shields.io/badge/RAG-Architecture-purple" alt="RAG">
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow" alt="License"></a>
 </p>
 
 > A **Retrieval-Augmented Generation (RAG)** chatbot that lets you chat with any YouTube video's content. Paste a YouTube link, and the app fetches the transcript, builds a searchable knowledge base, and answers your questions using **OpenAI's GPT models** — all through a clean Streamlit UI.
@@ -26,6 +26,7 @@
   - [Configuration](#configuration)
   - [Running the App](#running-the-app)
 - [Key Features](#key-features)
+- [Future Improvements](#future-improvements)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -51,6 +52,31 @@ An AI-powered **RAG chatbot** built with LangChain, OpenAI, and Python. Transfor
 
 ### 🔄 Architecture Flow
 
+```
+YouTube URL
+     │
+     v
+[🎬 Transcript Extraction]  (youtube-transcript-api)
+     │
+     v
+[📋 Text Chunking]  (RecursiveCharacterTextSplitter | 1000 chars, 200 overlap)
+     │
+     v
+[🧠 Vector Embedding]  (OpenAI text-embedding-3-small)
+     │
+     v
+[🗄️ FAISS Vector Store]  (Fast similarity search index)
+     │
+     v
+[🔍 User Query] → [Vector Search] → [Top-5 Chunks]
+     │
+     v
+[🤖 LLM Generation]  (OpenAI GPT-4o / GPT-4o-mini)
+     │
+     v
+[✅ Grounded Answer]
+```
+
 ### Architecture Breakdown
 
 | Stage | Component | Description |
@@ -71,6 +97,8 @@ An AI-powered **RAG chatbot** built with LangChain, OpenAI, and Python. Transfor
 
 - ✅ Mastering the use of **OpenAI APIs** for NLP and embedding tasks
 - ✅ Implementing **Retrieval-Augmented Generation (RAG)** to enhance chatbot responses
+- ✅ Building a real-time chatbot for **video content understanding** using AI
+- ✅ Integrating a chatbot with a **dynamically generated knowledge base**
 - ✅ Understanding the architecture of **LangChain LCEL pipelines**
 - ✅ Working with **FAISS** vector stores for efficient similarity search
 
@@ -110,6 +138,7 @@ YouTube-Video-Chatbot/
 │       ├── rag-langchain.ipynb     # Jupyter notebook for experimentation & prototyping
 │       └── requirements.txt        # Python dependencies
 ├── .gitignore                      # Git ignore rules
+├── LICENSE                         # MIT License
 └── README.md                       # Project documentation
 ```
 
@@ -184,6 +213,16 @@ streamlit run app.py
 
 ---
 
+## 🚀 Future Improvements
+
+- 📁 **Multi-Video RAG** — Support for multiple videos in one session with unified knowledge base
+- ⚡ **Caching Layer** — Cache transcripts and vector stores to speed up repeated queries
+- 📥 **Export Functionality** — Export chat history and sources as markdown or PDF
+- 🔗 **Playlist Support** — Process entire YouTube playlists automatically
+- 🌐 **Live Deployment** — Deploy on Streamlit Community Cloud for public access
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
@@ -198,14 +237,14 @@ Contributions are welcome! Please follow these steps:
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🙏 Acknowledgements
 
 - Built using **OpenAI APIs**, **LangChain**, and **Python**
-- Architecture reference: [Campusx](https://github.com/campusx-official)
+- Architecture reference: [CampusX](https://github.com/campusx-official)
 
 ---
 
