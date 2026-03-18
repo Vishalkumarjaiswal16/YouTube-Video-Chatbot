@@ -207,7 +207,7 @@ This project is licensed under the MIT License.
 ## 🙏 Acknowledgements
 
 - Built using **OpenAI APIs**, **LangChain**, and **Python**
-- Architecture reference: [krishnaik06](https://github.com/krishnaik06)
+- Architecture reference: [Campusx](https://github.com/campusx-official)
 
 ---
 
