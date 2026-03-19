@@ -248,4 +248,4 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ---
 
-Made with ❤️ by [Vishal Kumar Jaiswal](https://github.com/Vishalkumarjaiswal16)
+Made with ❤️ by [Vishal Kumar](https://github.com/Vishalkumarjaiswal16)
