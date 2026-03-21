@@ -25,7 +25,6 @@
   - [Configuration](#configuration)
   - [Running the App](#running-the-app)
 - [Key Features](#key-features)
-- [Future Improvements](#future-improvements)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -198,16 +197,6 @@ streamlit run app.py
 - 🖥️ **Interactive UI** — Clean Streamlit-based chat interface with sidebar configuration
 - 🌐 **Multi-Language Support** — Non-English transcripts are auto-translated to English before retrieval
 - ⚙️ **Configurable Model & Temperature** — Choose from gpt-4o-mini, gpt-4o, gpt-4.1-mini, gpt-4.1 via sidebar
-
----
-
-## 🚀 Future Improvements
-
-- 📁 **Multi-Video RAG** — Support for multiple videos in one session with unified knowledge base
-- ⚡ **Caching Layer** — Cache transcripts and vector stores to speed up repeated queries
-- 📥 **Export Functionality** — Export chat history and sources as markdown or PDF
-- 🔗 **Playlist Support** — Process entire YouTube playlists automatically
-- 🌐 **Live Deployment** — Deploy on Streamlit Community Cloud for public access
 
 ---
 
