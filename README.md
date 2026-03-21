@@ -17,6 +17,7 @@
 - [Overview](#overview)
 - [System Architecture](#system-architecture)
 - [What You Will Learn](#what-you-will-learn)
+- [What You'll Build](#what-youll-build)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
@@ -98,6 +99,15 @@ YouTube URL
 - ✅ Building a real-time chatbot for **video content understanding** using RAG
 - ✅ Understanding the architecture of **LangChain LCEL pipelines**
 - ✅ Working with **FAISS** vector stores for efficient similarity search
+
+---
+
+## 🛠️ What You'll Build
+
+- A functional **YouTube Video Chat Assistant**
+- A **transcript-based information retrieval system** connected to the chatbot
+- An **AI model integrated with OpenAI GPT** (gpt-4o, gpt-4o-mini, gpt-4.1)
+- A **user interface** for interacting with the chatbot in real-time
 
 ---
 
