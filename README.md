@@ -208,7 +208,6 @@ streamlit run app.py
 - 🖥️ **Interactive UI** — Clean Streamlit-based chat interface with sidebar configuration
 - 🌐 **Multi-Language Support** — Non-English transcripts are auto-translated to English before retrieval
 - ⚙️ **Configurable Model & Temperature** — Choose from gpt-4o-mini, gpt-4o, gpt-4.1-mini, gpt-4.1 via sidebar
-- 🔒 **Secure API Key Handling** — Loads key from `.env`; falls back to manual sidebar input
 
 ---
 
