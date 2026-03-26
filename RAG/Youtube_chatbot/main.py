@@ -94,7 +94,7 @@ def build_chain(transcript: str, model: str, temp: float, lang: str = "en"):
 
     # Embed & store
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
-    vectorstore = FAISS.from_documents(chunks, embeddings)
+    vectorstore = FAISS.from_documents(chunks, embeddings)  
 
     # Retriever
     retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 5})
